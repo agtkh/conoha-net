@@ -24,19 +24,19 @@ ConoHaには仮想マシン(VPS)が繋がっている仮想スイッチ側にパ
 **Mac OSX**
 
 ```shell
-curl -sL https://github.com/hironobu-s/conoha-net/releases/download/current/conoha-net-osx.amd64.gz | zcat > conoha-net && chmod +x ./conoha-net
+curl -sL https://github.com/agtkh/conoha-net/releases/download/0.2-fork1/conoha-net-osx.amd64.gz | zcat > conoha-net && chmod +x ./conoha-net
 ```
 
 
 **Linux(amd64)**
 
 ```bash
-curl -sL https://github.com/hironobu-s/conoha-net/releases/download/current/conoha-net-linux.amd64.gz | zcat > conoha-net && chmod +x ./conoha-net
+curl -sL https://github.com/agtkh/conoha-net/releases/download/0.2-fork1/conoha-net-linux.amd64.gz | zcat > conoha-net && chmod +x ./conoha-net
 ```
 
 **Windows(amd64)**
 
-[ZIP file](https://github.com/hironobu-s/conoha-net/releases/download/current/conoha-net.amd64.zip)
+[ZIP file](https://github.com/agtkh/conoha-net/releases/download/0.2-fork1/conoha-net.amd64.zip)
 
 ### ソースからビルドする場合
 
