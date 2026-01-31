@@ -1,5 +1,7 @@
 # ConoHa Net
 
+本リポジトリは [hironobu-s/conoha-net](https://github.com/hironobu-s/conoha-net) を基に、依存ライブラリ更新やビルド手順の整備などを行うフォーク版です。機能やライセンス(MIT)はオリジナルを踏襲しています。
+
 [ConoHa](https://www.conoha.jp/)のセキュリティグループを管理するためのツールです。
 
 ConoHaには仮想マシン(VPS)が繋がっている仮想スイッチ側にパケットフィルタが備わっています。VPS上のOSのファイアーウォール機能(iptables, firewalld)に影響されずに利用できるので便利ですが、[API](https://www.conoha.jp/docs/)でしか操作することができません。このツールはそれらをコマンドラインで操作できるようにするものです。
@@ -35,6 +37,17 @@ curl -sL https://github.com/hironobu-s/conoha-net/releases/download/current/cono
 **Windows(amd64)**
 
 [ZIP file](https://github.com/hironobu-s/conoha-net/releases/download/current/conoha-net.amd64.zip)
+
+### ソースからビルドする場合
+
+前提: Go 1.22 以上、`make`、`zip`、`gzip` が利用できる環境。  
+```bash
+make clean all
+```
+生成物:  
+- `bin/darwin/conoha-net-osx.amd64.gz`  
+- `bin/linux/conoha-net-linux.amd64.gz`  
+- `bin/windows/conoha-net.amd64.zip`
 
 ## 使い方
 
@@ -133,7 +146,7 @@ USAGE:
 commands [global options] command [command options] [arguments...]
 
 VERSION:
-0.2
+0.2-fork1
 
 COMMANDS:
 list          list all VPS
@@ -166,6 +179,13 @@ conoha-netのセキュリティグループを一覧表示するコマンドlist
 
 ## 変更履歴
 
+### 0.2-fork1
+
+* gophercloud など依存ライブラリを更新
+* DomainName/DomainID 未指定時に "default" を補完し、認証エラーを回避
+* README をフォーク版として明示し、ビルド手順を整理
+* バージョン表記を派生版専用の `0.2-fork1` に変更
+
 ### 0.2
 
 * ポートの指定で 30000-31000 のようなハイフン形式が指定できなかったのを修正
@@ -178,4 +198,4 @@ conoha-netのセキュリティグループを一覧表示するコマンドlist
 
 ## ライセンス
 
-MIT
+MIT（オリジナル作者 hironobu-s 氏のライセンス表示を尊重し、そのまま継承しています）

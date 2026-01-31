@@ -2,7 +2,7 @@ package conoha
 
 import (
 	"os"
-	
+
 	"github.com/gophercloud/gophercloud"
 	"github.com/gophercloud/gophercloud/openstack"
 )
@@ -39,6 +39,13 @@ func Identity() (*gophercloud.ProviderClient, error) {
 		opts, err := openstack.AuthOptionsFromEnv()
 		if err != nil {
 			return nil, err
+		}
+
+		// ConoHa環境ではドメイン指定が省略されることが多い。
+		// gophercloud v1 以降は Username 認証時に DomainName/DomainID のいずれか必須のため、
+		// 未指定なら "default" を補う。
+		if opts.DomainID == "" && opts.DomainName == "" {
+			opts.DomainName = "default"
 		}
 
 		identity, err = openstack.AuthenticatedClient(opts)
