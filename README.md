@@ -1,6 +1,6 @@
 # ConoHa Net
 
-> このプロジェクトは [hironobu-s/conoha-net](https://github.com/hironobu-s/conoha-net) を尊敬と感謝を込めてリメイク・メンテナンスしている派生版です。オリジナル作者の功績をできる限り残しつつ、依存ライブラリのアップデートや動作確認のしやすさを改善しています。ライセンスは元と同じ MIT を継承します（詳細はライセンス欄を参照してください）。
+本リポジトリは [hironobu-s/conoha-net](https://github.com/hironobu-s/conoha-net) を基に、依存ライブラリ更新やビルド手順の整備などを行うフォーク版です。機能やライセンス(MIT)はオリジナルを踏襲しています。
 
 [ConoHa](https://www.conoha.jp/)のセキュリティグループを管理するためのツールです。
 
@@ -37,6 +37,17 @@ curl -sL https://github.com/hironobu-s/conoha-net/releases/download/current/cono
 **Windows(amd64)**
 
 [ZIP file](https://github.com/hironobu-s/conoha-net/releases/download/current/conoha-net.amd64.zip)
+
+### ソースからビルドする場合
+
+前提: Go 1.22 以上、`make`、`zip`、`gzip` が利用できる環境。  
+```bash
+make clean all
+```
+生成物:  
+- `bin/darwin/conoha-net-osx.amd64.gz`  
+- `bin/linux/conoha-net-linux.amd64.gz`  
+- `bin/windows/conoha-net.amd64.zip`
 
 ## 使い方
 
