@@ -146,7 +146,7 @@ USAGE:
 commands [global options] command [command options] [arguments...]
 
 VERSION:
-0.2
+0.2-fork1
 
 COMMANDS:
 list          list all VPS
